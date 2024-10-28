@@ -87,3 +87,25 @@ Then, we push the tag `git push origin <tag_name>`.
 You can push to the remote branch one commit only using the commit hash by typing `git push origin <commit_hash>:<branch_name>`.
 
 Before jumping to the next chapter, please try the lab for [this chapter](./lab-push)
+
+
+## 4 - merge
+
+let suppose we have the following scenario
+![create new branch for merge](./assets/merge1.png)
+
+we created a new branch from `main` called `new_branch` in this new branch we did some chnages and created new commits. the question is that we end working on it and we want to transfer all the final changes to the main?
+
+![merge new_branch with new](./assets/merge2.png)
+
+voila, now we had transfer all the final changes with from `new_branch` to `main`
+
+#### let's use command to simulate the scenario
+
+ - create a new branch called `new_branch` : `git checkout -b new_branch`
+ - add some files, commit them or push to the remote repo
+ - switch back to `main` : `git checkout main`
+ - apply the merge: `git merge new_branch`
+ - if any conflicts occurs solve them, and then use `git merge --continue` or if you want to cancel the merge use `git merge --abort`
+ - finally if you want to delete the branch use `git branch -d new_branch`
+Before jumping to the next chapter, please try the lab for [this chapter](./lab-merge)
