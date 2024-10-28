@@ -53,3 +53,35 @@ Sometimes, you want to debug two commits to see the difference between them for 
 *In the example above, you see `HEAD`, which is the last commit. `HEAD~n` means rolling back n steps from the head.*
 
 Before jumping to the next chapter, please try the lab for [this chapter](./lab-commit)
+
+
+## 3- Push
+Now, we are working with one of the most important git commands that you will use, `git push`. This command helps us update a remote reference using local references, in our case **git/github** or **git/gitlab**. It also allows us to create tags and releases.
+
+### 1 - Send it to the Repo
+
+If you are working on a branch called `main` and you have created a commit that you want to send to the final remote repo, you can use `git push origin main`.
+
+### 2 - I'm Lazy, I Hate the Push Command
+
+You may have seen `git push -u` somewhere on GitHub or any other website, but you don't know why. This syntax allows us to use `git push` directly without specifying the origin or the branch. To ensure that it works, we should use `git push origin <origin_name> <branch_name>`, and voila, git will create a reference and use it whenever we hit `git push` or `git pull`.
+
+### 3 - Wait, Can I Push to Multiple Origins 🧐?
+
+Yes, a repo can have multiple origins defined inside it locally. For example, let's create two origins:
+`git remote add origin <link>`
+`git remote add test <link>`
+
+Now, use `git push <origin|test> <branch_name>`, and voila.
+
+### 4 - Tag, Tags, Tags....
+
+Sometimes, while working with a team or even on an OSS (Open Source Software), we think about using the notion of tag names. Git gives us the possibility to use them in an effective way. First, we create a tag `git tag <tag_name>`, for example, v1.0.0.
+![create tag](./assets/psuh2.png)
+
+Then, we push the tag `git push origin <tag_name>`.
+![show tag](./assets/push1.png)
+
+#### 5 - Push One Commit Only
+
+You can push to the remote branch one commit only using the commit hash by typing `git push origin <commit_hash>:<branch_name>`.
