@@ -126,3 +126,6 @@ To do that, we must use the following commands:
  - Apply the rebase: `git rebase new_branch`
 
 Before jumping to the next chapter, please try the lab for [this chapter](./lab-rebase)
+
+## Resource:
+https://learngitbranching.js.org/?locale=fr_FR
