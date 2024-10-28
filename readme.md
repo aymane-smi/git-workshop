@@ -89,23 +89,40 @@ You can push to the remote branch one commit only using the commit hash by typin
 Before jumping to the next chapter, please try the lab for [this chapter](./lab-push)
 
 
-## 4 - merge
+## 4 - Merge
 
-let suppose we have the following scenario
+Let's consider the following scenario:
 ![create new branch for merge](./assets/merge1.png)
 
-we created a new branch from `main` called `new_branch` in this new branch we did some chnages and created new commits. the question is that we end working on it and we want to transfer all the final changes to the main?
+We created a new branch called `new_branch` from `main`, and in this new branch, we made some changes and created new commits. The question is, how do we transfer all the final changes from `new_branch` to `main`?
 
-![merge new_branch with new](./assets/merge2.png)
+![merge new_branch with main](./assets/merge2.png)
 
-voila, now we had transfer all the final changes with from `new_branch` to `main`
+Voilà, now we have transferred all the final changes from `new_branch` to `main`.
 
-#### let's use command to simulate the scenario
+#### Let's use commands to simulate the scenario
 
- - create a new branch called `new_branch` : `git checkout -b new_branch`
- - add some files, commit them or push to the remote repo
- - switch back to `main` : `git checkout main`
- - apply the merge: `git merge new_branch`
- - if any conflicts occurs solve them, and then use `git merge --continue` or if you want to cancel the merge use `git merge --abort`
- - finally if you want to delete the branch use `git branch -d new_branch`
-Before jumping to the next chapter, please try the lab for [this chapter](./lab-merge)
+ - Create a new branch called `new_branch`: `git checkout -b new_branch`
+ - Add some files, commit them, or push to the remote repo
+ - Switch back to `main`: `git checkout main`
+ - Apply the merge: `git merge new_branch`
+ - If any conflicts occur, solve them, and then use `git merge --continue` or if you want to cancel the merge, use `git merge --abort`
+ - Finally, if you want to delete the branch, use `git branch -d new_branch`
+Before jumping to the next chapter, please try the lab for [this chapter](./lab-merge).
+
+
+## 5 - Rebase
+
+Let's consider the following scenario:
+![rebase scenario](./assets/rebase1.png)
+After creating a new branch `new_branch` from `main`, we added a new commit to `main` but not to `new_branch`, for example, a new PR was made or a direct change was made in `main` directly, etc...
+
+The question is, how do we move all the commit history, snapshots from `new_branch` to `main` or vice versa, and for that, we use `git rebase`.
+![rebase scenario](./assets/rebase2.png)
+To do that, we must use the following commands:
+- Create a new branch called `new_branch`: `git checkout -b new_branch`
+ - Add some files, commit them, or push to the remote repo
+ - Switch back to `main`: `git checkout main`
+ - Apply the rebase: `git rebase new_branch`
+
+Before jumping to the next chapter, please try the lab for [this chapter](./lab-rebase)
