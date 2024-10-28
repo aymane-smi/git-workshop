@@ -85,3 +85,5 @@ Then, we push the tag `git push origin <tag_name>`.
 #### 5 - Push One Commit Only
 
 You can push to the remote branch one commit only using the commit hash by typing `git push origin <commit_hash>:<branch_name>`.
+
+Before jumping to the next chapter, please try the lab for [this chapter](./lab-push)
