@@ -4,6 +4,10 @@ push
 merge
 rebase
 reset
+revert
+merging strategies
+github action
+!gitlab ci
 PR -->
 
 ## 1- Introduction
